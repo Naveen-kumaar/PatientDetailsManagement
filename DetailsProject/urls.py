@@ -17,6 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from xapp import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.home, name ='home'),
+    path('register/',views.Register, name ='register'),
+    path('login/',views.login_page, name ='login'),
+    path('logout/',views.logout_page, name ='logout'),
+    path('create/',views.create, name ='create'),
+    path('view/',views.view, name ='view'),
+    path('update/<int:id>',views.update, name ='update'),
+    path('Remove/<int:id>',views.Delete, name ='Delete'),
+    path('Contact/',views.contact, name ='contact')
 ]
