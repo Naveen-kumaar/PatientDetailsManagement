@@ -1,0 +1,76 @@
+{%extends 'base.html'%}
+{%load static%} 
+{% block title%}
+Virma-Physio | Update Patient Details
+{% endblock %}
+
+{%block content%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3">Update Patient Details</h4>
+            <hr style="border-color:#b8bfc2;">
+        </div>    
+    </div>
+</div>
+
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 border p-5">
+                <form method = "POST"action="{% url 'update' data.id %}">
+                    {% csrf_token %}
+                    <h2 class="text-primary">Add patient details</h2>
+                    <div class="form-group mb-2">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" value="{{data.Date}}" name="date" id="date" required>
+                    </div>
+                        <div class="form-group mb-2">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" value="{{data.Name}}" name="name" id="name" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="age">Age</label>
+                            <input type="text" class="form-control" value="{{data.Age}}" name="age" id="age" required>
+                        </div>
+                        <br>
+                        <div class="form-group mb-2">
+                            <label for="male">Male</label>
+                            <input type="radio" name="gender"id="male" value="male">
+                            <label for="female">Female</label>
+                            <input type="radio"  name="gender"   id="female" value="female">
+                        </div>
+                        <br>
+                       
+                        <div class="form-group mb-2">
+                            <lable for="address">Address</lable>
+                            <textarea name="address" class="form-control"  name="address"id="address"  value="{{data.Address}}" ></textarea>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="contactno">Contact no</label>
+                            <input type="tel" class="form-control" name="contactno" id="contactno" maxlength="10" value="{{data.Contactno}}">
+                        </div>
+                    
+                        <div class="form-group mb-2">
+                            <label for="history">History</label>
+                            <input type="text" class="form-control" name="history" value="{{data.History}}" id="history" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="pain">Pain</label>
+                            <input type="text" class="form-control" value="{{data.Pain}}" name="pain" id="pain" required>
+                        </div>
+                       
+                       
+                        <div class="form-group mb-2">
+                            <label for="duration">Duration</label>
+                            <input type="time" class="form-control" value="{{data.Duration}}" name="duration" id="duration" required>
+                        </div>
+                    <button type="submit" class="btn btn-primary btn-block mt-3" value="update">Update</button>
+                </form>
+            </div>    
+        </div>
+    </div>
+</section>
+
+{%endblock%}
