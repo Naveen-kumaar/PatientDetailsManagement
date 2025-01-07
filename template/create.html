@@ -9,14 +9,14 @@ Virma-Physio | Add Patient Details
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col-6 mt-5">
+            <div class="col-6 col-lg-6 col-md-6 col-12 mt-5">
                 <div class="col">
                     <img class="img-fluid" src="{% static 'physio.webp' %}">
                     <p>physiotherapy, is a healthcare profession, as well as the care provided by physical therapists who promote, maintain, or restore health through patient education, physical intervention, disease prevention, and health promotion. Physical therapist is the term used for such professionals in the United States, and physiotherapist is the term used in many other countries.</p>
                 </div>
             </div>
             
-            <div class="col-6 p-3 my-5">
+            <div class="col-6 col-lg-6 col-md-6 col-12 p-3 my-5">
                 <form method = "POST"action="">
                     {% csrf_token %}
                     <h2 class="text-primary">Add patient details</h2>
